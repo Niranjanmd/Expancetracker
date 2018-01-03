@@ -8,15 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   banks: any[];
+  totalBal: number;
   constructor(private bs: Bankservice) { }
 
   ngOnInit() {
     this.bs.getBankList().subscribe(res => {
       this.banks = res;
-      console.log(this.banks);
+      this.getTotalBalance();
     });
   }
 
-  
+  getTotalBalance() {
+    let total = 0;
 
+    for (let i = 0; i < this.banks.length; i++) {
+      if (!isNaN(parseFloat(this.banks[i].balance))) {
+        total += parseFloat(this.banks[i].balance);
+      }
+
+    }
+    this.totalBal = total;
+    console.log(total);
+  }
 }
