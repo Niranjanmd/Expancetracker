@@ -1,3 +1,4 @@
+import { Bankservice } from './../../services/bank.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  banks: any[];
+  constructor(private bs: Bankservice) { }
 
   ngOnInit() {
+    this.bs.getBankList().subscribe(res => {
+      this.banks = res;
+      console.log(this.banks);
+    });
   }
+
+  
 
 }

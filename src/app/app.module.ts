@@ -12,6 +12,23 @@ import { BankaccountListComponent } from './components/bankaccount-list/bankacco
 import { AddBankdetailsComponent } from './components/add-bankdetails/add-bankdetails.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Bankservice } from './services/bank.service';
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyCzj-h4IH9QIP2ugEqAqvYB_hUm6-IASwA',
+  authDomain: 'expancetracker.firebaseapp.com',
+  databaseURL: 'https://expancetracker.firebaseio.com',
+  projectId: 'expancetracker',
+  storageBucket: 'expancetracker.appspot.com',
+  messagingSenderId: '895554202700'
+};
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +43,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
-  providers: [],
+  providers: [AngularFireDatabase, AngularFireAuth, Bankservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
