@@ -1,3 +1,4 @@
+import { ExpenceService } from './../../services/expence.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expance-list.component.css']
 })
 export class ExpanceListComponent implements OnInit {
-
-  constructor() { }
+  expanceList: any[];
+  constructor(private es: ExpenceService) { }
 
   ngOnInit() {
+    this.es.getExpenceList('jan').subscribe(res => {
+      this.expanceList = res;
+      console.log(this.expanceList);
+    });
   }
 
 }

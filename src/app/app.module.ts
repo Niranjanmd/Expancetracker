@@ -1,3 +1,4 @@
+import { ExpenceService } from './services/expence.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
@@ -57,7 +58,7 @@ export const firebaseConfig = {
       { path: 'expences', component: ExpanceListComponent},
     ])
   ],
-  providers: [AngularFireDatabase, AngularFireAuth, Bankservice],
+  providers: [AngularFireDatabase, AngularFireAuth, Bankservice, ExpenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
