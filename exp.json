@@ -1,0 +1,20 @@
+{
+  "jan": {
+    "1": {
+      "type": "Loan",
+      "description": "Vaccum Cleaner",
+      "amount": 1000,
+      "stDate": "10/01/2018",
+      "endDate": "03/01/2019",
+      "isPaid": true
+    },
+    "2": {
+      "type": "Loan",
+      "description": "Personal Loan",
+      "amount": 6516,
+      "stDate": "04/04/2016",
+      "endDate": "04/04/2019",
+      "isPaid": true
+    }
+  }
+}

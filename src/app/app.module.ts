@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -17,6 +18,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Bankservice } from './services/bank.service';
+import { RouterModule } from '@angular/router';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCzj-h4IH9QIP2ugEqAqvYB_hUm6-IASwA',
@@ -27,6 +29,11 @@ export const firebaseConfig = {
   messagingSenderId: '895554202700'
 };
 
+
+//  const appRoutes: Routes: = [
+//   { path:'', component: DashboardComponent},
+//   {}
+//  ]
 
 
 @NgModule({
@@ -45,6 +52,10 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    RouterModule.forRoot([
+      {path: '', component: DashboardComponent},
+      { path: 'expences', component: ExpanceListComponent},
+    ])
   ],
   providers: [AngularFireDatabase, AngularFireAuth, Bankservice],
   bootstrap: [AppComponent]
