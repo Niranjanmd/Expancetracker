@@ -2,6 +2,7 @@ import { ExpenceService } from './services/expence.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -52,6 +53,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot([
       {path: '', component: DashboardComponent},

@@ -1,20 +1,76 @@
 {
-  "jan": {
-    "1": {
-      "type": "Loan",
-      "description": "Vaccum Cleaner",
-      "amount": 1000,
-      "stDate": "10/01/2018",
-      "endDate": "03/01/2019",
-      "isPaid": true
-    },
-    "2": {
-      "type": "Loan",
-      "description": "Personal Loan",
-      "amount": 6516,
-      "stDate": "04/04/2016",
-      "endDate": "04/04/2019",
-      "isPaid": true
+  "2017": {
+    "dec": {
+      "1": {
+        "type": "Loan",
+        "description": "Vaccum Cleaner",
+        "amount": 1000,
+        "stDate": "10/01/2018",
+        "endDate": "03/01/2019",
+        "isPaid": true
+      },
+      "2": {
+        "type": "Loan",
+        "description": "Personal Loan",
+        "amount": 6516,
+        "stDate": "04/04/2016",
+        "endDate": "04/04/2019",
+        "isPaid": true
+      }
     }
+  },
+  "2018": {
+    "jan": {
+      "1": {
+        "type": "Loan",
+        "description": "Vaccum Cleaner",
+        "amount": 1000,
+        "stDate": "10/01/2018",
+        "endDate": "03/01/2019",
+        "isPaid": true
+      },
+      "2": {
+        "type": "Loan",
+        "description": "Personal Loan",
+        "amount": 6516,
+        "stDate": "04/04/2016",
+        "endDate": "04/04/2019",
+        "isPaid": true
+      },
+      "3": {
+        "type": "EMI",
+        "description": "Laptop EMI",
+        "amount": 23200,
+        "stDate": "04/04/2016",
+        "endDate": "04/04/2019",
+        "isPaid": false
+      },
+      "4": {
+        "type": "EMI",
+        "description": "Subba Mbl EMi",
+        "amount": 2500,
+        "stDate": "04/04/2016",
+        "endDate": "04/04/2019",
+        "isPaid": false
+      }
+    },
+        "feb": {
+          "1": {
+            "type": "Loan",
+            "description": "Vaccum Cleaner",
+            "amount": 1000,
+            "stDate": "10/01/2018",
+            "endDate": "03/01/2019",
+            "isPaid": false
+          },
+          "2": {
+            "type": "Loan",
+            "description": "Personal Loan",
+            "amount": 6516,
+            "stDate": "04/04/2016",
+            "endDate": "04/04/2019",
+            "isPaid": false
+          }
+        }
   }
 }

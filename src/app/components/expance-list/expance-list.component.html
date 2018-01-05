@@ -1,18 +1,42 @@
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-        <th scope="col">Description</th>
-        <th scope="col">Begin</th>
-        <th scope="col">End</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'done' : 'pending'">
-        <td>{{ exp.type }}</td>
-        <td>{{ exp.description }}</td>
-        <td>{{ exp.stDate }}</td>
-        <td>{{ exp.endDate }}</td>   
-      </tr>
-    </tbody>
-  </table>
+<div class="card" *ngIf="years.length>0">
+
+  <div class="card-block">
+    <div class="form-group">
+      <label>Select year</label>
+      <select name="id" [(ngModel)]="selectedYear" class="form-control" (change)="onYearChange()">
+        <option value="">Please Select</option>
+        <option [ngValue]="year.id" *ngFor="let year of years">{{year.value}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select name="selectedMonth" [(ngModel)]="selectedMonth" class="form-control" (change)="onMonthChange()" [disabled]="isYearNotSelected">
+        <option value="">Please Select</option>
+        <option [ngValue]="month" *ngFor="let month of months">{{month}}</option>
+      </select>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<table class="table" *ngIf="expanceList">
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Begin</th>
+      <th scope="col">End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'done' : 'pending'">
+      <td>{{ exp.type }}</td>
+      <td>{{ exp.description }}</td>
+      <td>{{ exp.stDate }}</td>
+      <td>{{ exp.endDate }}</td>
+    </tr>
+  </tbody>
+</table>
