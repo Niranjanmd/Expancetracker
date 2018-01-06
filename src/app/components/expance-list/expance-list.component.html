@@ -33,7 +33,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'done' : 'pending'">
+    <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'table-success' : 'table-warning'">
       <td>{{ exp.type }}</td>
       <td>{{ exp.description }}</td>
       <td>{{ exp.amount }}</td>

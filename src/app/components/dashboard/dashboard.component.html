@@ -23,23 +23,27 @@
 
 <h2>Expance</h2>
 <div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
+  <table class="table ">
+    <thead class="thead-inverse">
       <tr>
         <th scope="col">Type</th>
         <th scope="col">Description</th>
-        <th>Amount</th>
+        <th scope="col">Amount</th>
         <th scope="col">Begin</th>
         <th scope="col">End</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'done' : 'pending'">
+      <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'table-success' : 'table-warning'">
+        
         <td>{{ exp.type }}</td>
         <td>{{ exp.description }}</td>
         <td>{{ exp.amount }}</td>
         <td>{{ exp.stDate }}</td>
         <td>{{ exp.endDate }}</td>
+        <td><button class="btn btn-sm btn-primary" [hidden]="exp.isPaid" (click)="PayExpance(exp)">payed</button>
+        <button class="btn btn-sm btn-primary" [hidden]="!exp.isPaid" (click)="PayExpance(exp)">Cancel</button></td>
       </tr>
     </tbody>
   </table>

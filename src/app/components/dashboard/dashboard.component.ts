@@ -1,6 +1,7 @@
 import { Bankservice } from './../../services/bank.service';
 import { Component, OnInit } from '@angular/core';
 import { ExpenceService } from './../../services/expence.service';
+import { Expance } from '../../models/expence';
 
 @Component({
   selector: 'app-dashboard',
@@ -48,9 +49,14 @@ export class DashboardComponent implements OnInit {
       if (!isNaN(parseFloat(this.banks[i].balance))) {
         total += parseFloat(this.banks[i].balance);
       }
-
     }
     this.totalBal = total;
-    // console.log(total);
+    
+  }
+
+  PayExpance(exp: Expance) {
+    exp.isPaid = !exp.isPaid;
+    this.es.updateExpance(exp.$key, exp).then(function(){
+    });
   }
 }

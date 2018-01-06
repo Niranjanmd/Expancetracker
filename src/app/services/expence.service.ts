@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
 import { Expance } from '../models/expence';
@@ -20,4 +19,9 @@ export class ExpenceService {
     this.years = this.fb.list('/expences') as FirebaseListObservable<Expance[]>;
     return this.years;
   }
+
+  updateExpance(id: string, exp: Expance) {
+    return this.expenceList.update(id, exp);
+  }
+
 }
