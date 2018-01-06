@@ -4,15 +4,15 @@
     <div class="form-group">
       <label>Select year</label>
       <select name="id" [(ngModel)]="selectedYear" class="form-control" (change)="onYearChange()">
-        <option value="">Please Select</option>
+        <option value="0">Please Select</option>
         <option [ngValue]="year.id" *ngFor="let year of years">{{year.value}}</option>
       </select>
     </div>
 
     <div class="form-group">
       <select name="selectedMonth" [(ngModel)]="selectedMonth" class="form-control" (change)="onMonthChange()" [disabled]="isYearNotSelected">
-        <option value="">Please Select</option>
-        <option [ngValue]="month" *ngFor="let month of months">{{month}}</option>
+        <option value="0">Please Select</option>
+        <option [ngValue]="month.id" *ngFor="let month of months">{{month.value}}</option>
       </select>
 
     </div>
@@ -27,6 +27,7 @@
     <tr>
       <th scope="col">Type</th>
       <th scope="col">Description</th>
+      <th>Amount</th>
       <th scope="col">Begin</th>
       <th scope="col">End</th>
     </tr>
@@ -35,6 +36,7 @@
     <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'done' : 'pending'">
       <td>{{ exp.type }}</td>
       <td>{{ exp.description }}</td>
+      <td>{{ exp.amount }}</td>
       <td>{{ exp.stDate }}</td>
       <td>{{ exp.endDate }}</td>
     </tr>

@@ -1,6 +1,6 @@
 {
   "2017": {
-    "dec": {
+    "12": {
       "1": {
         "type": "Loan",
         "description": "Vaccum Cleaner",
@@ -20,7 +20,7 @@
     }
   },
   "2018": {
-    "jan": {
+    "1": {
       "1": {
         "type": "Loan",
         "description": "Vaccum Cleaner",
@@ -52,9 +52,17 @@
         "stDate": "04/04/2016",
         "endDate": "04/04/2019",
         "isPaid": false
+      },
+      "5": {
+        "type": "Rent",
+        "description": "Subba Mbl EMi",
+        "amount": 5500,
+        "stDate": "",
+        "endDate": "",
+        "isPaid": true
       }
     },
-        "feb": {
+        "2": {
           "1": {
             "type": "Loan",
             "description": "Vaccum Cleaner",
