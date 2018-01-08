@@ -22,6 +22,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Bankservice } from './services/bank.service';
 import { RouterModule } from '@angular/router';
 
+
+// ng switch
+import { UiSwitchModule } from 'ngx-toggle-switch/src';
+
 export const firebaseConfig = {
   apiKey: 'AIzaSyCzj-h4IH9QIP2ugEqAqvYB_hUm6-IASwA',
   authDomain: 'expancetracker.firebaseapp.com',
@@ -54,6 +58,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
+    UiSwitchModule,
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot([
       {path: '', component: DashboardComponent},

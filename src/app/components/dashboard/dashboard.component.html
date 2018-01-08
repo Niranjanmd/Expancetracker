@@ -1,8 +1,7 @@
 <h1>Dashboard</h1>
 
 <section class="row text-center placeholders">
-
-
+  
   <div class="placeholder " *ngFor="let bank of banks">
     <div class="circle">Bal: {{bank.balance}}</div>
     <h4>{{bank.bankName}}</h4>
@@ -13,11 +12,10 @@
     <h4>Total Balance</h4>
   </div>
 
-    <div class="placeholder">
-      <div class="circle" [ngClass]="(totalDebt>0) ? 'warn' :'ok'">Bal: {{ totalDebt }}</div>
-      <h4>Total Debt</h4>
-    </div>
-
+  <div class="placeholder">
+    <div class="circle" [ngClass]="(totalDebt>0) ? 'danger' :'good'">Bal: {{ totalDebt }}</div>
+    <h4>Remaining Debt</h4>
+  </div>
 
 </section>
 
@@ -36,14 +34,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'table-success' : 'table-warning'">
-        
+
         <td>{{ exp.type }}</td>
         <td>{{ exp.description }}</td>
         <td>{{ exp.amount }}</td>
         <td>{{ exp.stDate }}</td>
         <td>{{ exp.endDate }}</td>
-        <td><button class="btn btn-sm btn-primary" [hidden]="exp.isPaid" (click)="PayExpance(exp)">payed</button>
-        <button class="btn btn-sm btn-primary" [hidden]="!exp.isPaid" (click)="PayExpance(exp)">Cancel</button></td>
+        <!-- <td><button class="btn btn-sm btn-primary" [hidden]="exp.isPaid" (click)="PayExpance(exp)">payed</button>
+        <button class="btn btn-sm btn-primary" [hidden]="!exp.isPaid" (click)="PayExpance(exp)">Cancel</button></td> -->
+        <td>
+          <ui-switch [checked]="exp.isPaid" (change)="PayExpance(exp)"></ui-switch>
+        </td>
       </tr>
     </tbody>
   </table>

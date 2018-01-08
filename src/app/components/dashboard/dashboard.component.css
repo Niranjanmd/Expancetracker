@@ -21,8 +21,13 @@
   color: white;
 }
 
-.warn{
-  background: orange;
+  .danger {
+    background: #f2dede;
+}
+
+.success{
+   background:#dff0d8;
+
 }
 
 

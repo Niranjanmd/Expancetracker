@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   totalBal: number;
   totalDebt: number;
   expanceList: any[];
+
   constructor(private bs: Bankservice, private es: ExpenceService) { }
 
   ngOnInit() {
@@ -51,10 +52,15 @@ export class DashboardComponent implements OnInit {
       }
     }
     this.totalBal = total;
-    
+    // console.log(total);
   }
 
   PayExpance(exp: Expance) {
+    if (!exp.isPaid) {
+      this.totalBal = this.totalBal - exp.amount;
+    }else {
+      this.totalBal = this.totalBal + exp.amount;
+    }
     exp.isPaid = !exp.isPaid;
     this.es.updateExpance(exp.$key, exp).then(function(){
     });
