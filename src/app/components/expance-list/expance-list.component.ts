@@ -87,11 +87,15 @@ export class ExpanceListComponent implements OnInit {
   }
 
 
-  getExpenceList(year: string, month: string){
+  getExpenceList(year: string, month: string) {
     this.es.getExpenceList(this.selectedYear, this.selectedMonth).subscribe(res => {
       this.expanceList = res;
       // console.log(this.expanceList);
     });
+  }
+
+  onImportbtnClick() {
+    this.es.AddGenericExpence(this.selectedYear,this.selectedMonth);
   }
 
 }

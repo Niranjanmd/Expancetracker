@@ -1,17 +1,17 @@
 {
     "1": {
         "bankName": "HDFC",
-        "AccountNumber": "4545645345",
+        "accountNumber": "4545645345",
         "balance": "3000"
     },
     "2": {
         "bankName": "SBI",
-        "AccountNumber": "33397131786",
+        "accountNumber": "33397131786",
         "balance": "5000"
     },
     "3": {
         "bankName": "SC",
-        "AccountNumber": "45611035953",
+        "accountNumber": "45611035953",
         "balance": "50000"
     }
 }

@@ -2,10 +2,10 @@
 
 <section class="row text-center placeholders">
   
-  <div class="placeholder " *ngFor="let bank of banks">
-    <div class="circle">Bal: {{bank.balance}}</div>
+  <div class="placeholder " *ngFor="let bank of banks" >
+    <div class="circle" (click)="onBankClick(bank)">Bal: {{bank.balance}}</div>
     <h4>{{bank.bankName}}</h4>
-    <div class="text-muted">{{ bank.AccountNumber }}</div>
+    <div class="text-muted">{{ bank.accountNumber }}</div>
   </div>
   <div class="placeholder ">
     <div class="circle">Bal: {{ totalBal }}</div>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="placeholder">
-    <div class="circle" [ngClass]="(totalDebt>0) ? 'danger' :'good'">Bal: {{ totalDebt }}</div>
+    <div class="circle" [ngClass]="(totalDebt>0) ? 'danger' :'success'">{{ totalDebt }}</div>
     <h4>Remaining Debt</h4>
   </div>
 

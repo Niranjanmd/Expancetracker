@@ -1,5 +1,4 @@
 <div class="card" *ngIf="years.length>0">
-
   <div class="card-block">
     <div class="form-group">
       <label>Select year</label>
@@ -19,26 +18,34 @@
   </div>
 </div>
 
+<div *ngIf=" expanceList && expanceList.length == 0" class="card">
+  <div class="card-block">
+    <p class="text-info">No Expence Found for the month Click button to add the expences</p>
+    <button class="btn btn-primary btn-sm" (click)="onImportbtnClick()">Import</button>
+  </div>
+</div>
 
 
 
-<table class="table" *ngIf="expanceList">
-  <thead>
-    <tr>
-      <th scope="col">Type</th>
-      <th scope="col">Description</th>
-      <th>Amount</th>
-      <th scope="col">Begin</th>
-      <th scope="col">End</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'table-success' : 'table-warning'">
-      <td>{{ exp.type }}</td>
-      <td>{{ exp.description }}</td>
-      <td>{{ exp.amount }}</td>
-      <td>{{ exp.stDate }}</td>
-      <td>{{ exp.endDate }}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="expanceList && expanceList.length>0">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Description</th>
+        <th>Amount</th>
+        <th scope="col">Begin</th>
+        <th scope="col">End</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exp of expanceList" [ngClass]=" exp.isPaid ? 'table-success' : 'table-warning'">
+        <td>{{ exp.type }}</td>
+        <td>{{ exp.description }}</td>
+        <td>{{ exp.amount }}</td>
+        <td>{{ exp.stDate }}</td>
+        <td>{{ exp.endDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
